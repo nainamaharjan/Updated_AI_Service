@@ -30,6 +30,10 @@ def keyWordExtraction(text):
     response = service.inference(task_type=TaskType.KEYWORD_EXTRACTION, input_text=text)
     return response
 
+def sentiment(text):
+    response = service.inference(task_type=TaskType.SENTIMENT_ANALYSIS, input_text=text)
+    return response
+
 
 def get_response_from_llm(input_text):
     return service.inference_stream(input_text=input_text)
@@ -88,4 +92,11 @@ def read_root(text: str):
     if not text:
         raise HTTPException(status_code=400, detail="Text parameter is required")
     keyword_text = keyWordExtraction(text)
+    return {"response": keyword_text}
+
+@app.get("/sentiment-analysis")
+def read_root(text: str):
+    if not text:
+        raise HTTPException(status_code=400, detail="Text parameter is required")
+    keyword_text = sentiment(text)
     return {"response": keyword_text}

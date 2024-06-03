@@ -53,6 +53,9 @@ class LlmService:
             elif task_type == TaskType.KEYWORD_EXTRACTION:
                 for out in self.llm.stream() + get_lm_keyword_extraction(input_text=input_text):
                     reply = str(out)
+            elif task_type == TaskType.SENTIMENT_ANALYSIS:
+                for out in self.llm.stream() + get_lm_sentiment_analysis(input_text=input_text):
+                    reply = str(out)
         except Exception as e:
             print(f"Error: {e}")
             print(reply)
@@ -118,7 +121,7 @@ def get_lm_check_grammar(lm, input_text):
 def get_lm_professional(lm, input_text):
     with system():
         lm = lm + (
-            "You are an agent that  converts user's input to make them sound more professional. Make the user sound very professional.")
+            "You are an agent that converts user's input to make them sound more professional. Make the user sound very professional.")
     with user():
         lm += "Please make my sentence more professional. Please respond in  {'professional':'your response here' }\n" + input_text
     with assistant():
@@ -152,7 +155,7 @@ def get_lm_elaboration(lm, input_text):
 def get_lm_casual(lm, input_text):
     with system():
         lm = lm + (
-            "You are an agent that  converts user's input to make them sound more casual. Make the user sound casual.")
+            "You are an agent that converts user's input to make them sound more casual. Make the user sound casual.")
     with user():
         lm += "Please make my sentence more casual. Please respond in  {'casual':'your response here' }\n" + input_text
     with assistant():
@@ -169,3 +172,13 @@ def get_lm_keyword_extraction(lm, input_text):
     with assistant():
         lm += gen("keyword_response", stop=["SYS", "[/INST]", "[INST]"], max_tokens=200)
     return lm["keyword_response"]
+
+@guidance
+def get_lm_sentiment_analysis(lm, input_text):
+    with system():
+        lm = lm + ("You are an agent that analyzes sentiment. Analyze the sentiment of the user's input.")
+    with user():
+        lm += "Please extract sentiments. Please respond in {'sentiment':'your response here' }\n" + input_text
+    with assistant():
+        lm += gen("keyword_sentiment", stop=["SYS", "[/INST]", "[INST]"], max_tokens=200)
+    return  lm["keyword_sentiment"]
