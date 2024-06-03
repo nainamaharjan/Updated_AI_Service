@@ -50,6 +50,9 @@ class LlmService:
             elif task_type == TaskType.ELABORATE:
                 for out in self.llm.stream() + get_lm_elaboration(input_text=input_text):
                     reply = str(out)
+            elif task_type == TaskType.KEYWORD_EXTRACTION:
+                for out in self.llm.stream() + get_lm_keyword_extraction(input_text=input_text):
+                    reply = str(out)
         except Exception as e:
             print(f"Error: {e}")
             print(reply)
@@ -155,3 +158,14 @@ def get_lm_casual(lm, input_text):
     with assistant():
         lm += gen("casual_response", stop=["SYS", "[/INST]", "[INST]"], max_tokens=200)
     return lm["casual_response"]
+
+@guidance
+def get_lm_keyword_extraction(lm, input_text):
+    with system():
+        lm = lm + (
+            "You are an agent that extracts keywords from the user's input. Identify the most important words or phrases effectively.")
+    with user():
+        lm += "Please extract keywords  {'keyword':'your response here' }\n" + input_text
+    with assistant():
+        lm += gen("keyword_response", stop=["SYS", "[/INST]", "[INST]"], max_tokens=200)
+    return lm["keyword_response"]

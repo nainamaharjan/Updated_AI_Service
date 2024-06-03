@@ -102,3 +102,16 @@ def enter_prompt_and_get_response(prompt):
     except Exception as e:
         print(f"LLM response generation error: {e}")
         st.error("Assistant currently not available")
+
+
+def keyword_extraction(text):
+    api_url = f"{BASE_URL}/keyword-extraction"
+    params = {"text": text}
+    try:
+        response = requests.get(api_url, params=params)
+        response.raise_for_status()
+        llm_response = response.json().get("response")
+        return llm_response
+    except requests.RequestException as e:
+        st.error(f"Error: {e}")
+        return None

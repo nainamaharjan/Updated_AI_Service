@@ -26,6 +26,10 @@ def casual(text):
     response = service.inference(task_type=TaskType.CASUAL, input_text=text)
     return response
 
+def keyWordExtraction(text):
+    response = service.inference(task_type=TaskType.KEYWORD_EXTRACTION, input_text=text)
+    return response
+
 
 def get_response_from_llm(input_text):
     return service.inference_stream(input_text=input_text)
@@ -78,3 +82,10 @@ def read_root(text: str):
         raise HTTPException(status_code=400, detail="Text parameter is required")
     summarized_text = shorten(text)
     return {"response": summarized_text}
+
+@app.get("/keyword-extraction")
+def read_root(text: str):
+    if not text:
+        raise HTTPException(status_code=400, detail="Text parameter is required")
+    keyword_text = keyWordExtraction(text)
+    return {"response": keyword_text}

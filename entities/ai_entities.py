@@ -15,6 +15,7 @@ class TaskType(str,Enum):
     CASUAL = "CASUAL"
     SHORTEN = "SHORTEN"
     ELABORATE = "ELABORATE"
+    KEYWORD_EXTRACTION = "KEYWORD_EXTRACTION"
 
 class Prompt(BaseModel):
     system_prompt: str = None
