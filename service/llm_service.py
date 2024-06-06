@@ -4,7 +4,7 @@
 """
 import guidance
 from guidance import models, system, user, gen, assistant
-from entities.ai_entities import  TaskType
+from entities.ai_entities import TaskType
 import torch
 import gc
 from settings import MODEL

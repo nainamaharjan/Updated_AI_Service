@@ -6,5 +6,6 @@ guidance==0.1.14
 sentencepiece==0.2.0
 llama-cpp-python==0.2.75
 huggingface-hub
+
 # download model
 # huggingface-cli download TheBloke/phi-2-orange-GGUF phi-2-orange.Q8_0.gguf
