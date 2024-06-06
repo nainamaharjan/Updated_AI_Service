@@ -1,0 +1,56 @@
+2024-06-06 13:54:28,505 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/sentiment-analysis?text=I+love+apple.
+2024-06-06 13:54:33,790 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/sentiment-analysis?text=I+love+apple. in 5.2844 seconds
+2024-06-06 14:46:16,892 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+drinking+juice.+She+loves+reading.+She+loves+watching+movie.
+2024-06-06 14:46:21,752 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+drinking+juice.+She+loves+reading.+She+loves+watching+movie. in 4.8584 seconds
+2024-06-06 14:49:42,124 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/shorten-text?text=Naina+likes+reading+books.+She+loves+watching+moveis+as+well.+She+loves+eating+food.
+2024-06-06 14:49:45,353 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/shorten-text?text=Naina+likes+reading+books.+She+loves+watching+moveis+as+well.+She+loves+eating+food. in 3.2282 seconds
+2024-06-06 14:54:02,708 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/response-from-llm?text=who+is+elon+musk%3F
+2024-06-06 14:54:11,037 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/response-from-llm?text=who+is+elon+musk%3F in 8.3281 seconds
+2024-06-06 15:01:31,118 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/shorten-text?text=Naina+likes+reading+books.+She+likes+drinking+coffee.
+2024-06-06 15:01:34,147 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/shorten-text?text=Naina+likes+reading+books.+She+likes+drinking+coffee. in 3.0277 seconds
+2024-06-06 15:01:34,148 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x12e2f6e00>
+2024-06-06 15:09:14,299 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/response-from-llm?text=Who+is+elon+musk%3F
+2024-06-06 15:09:22,445 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/response-from-llm?text=Who+is+elon+musk%3F in 8.1462 seconds
+2024-06-06 15:09:22,448 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x147953010>
+2024-06-06 15:11:24,200 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/response-from-llm?text=who+is+elon+musk%3F
+2024-06-06 15:11:32,739 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/response-from-llm?text=who+is+elon+musk%3F in 8.5386 seconds
+2024-06-06 15:11:32,742 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x158ec3040>
+2024-06-06 15:16:25,082 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/check-grammar?text=Wha+iz+da+color%3F
+2024-06-06 15:16:27,576 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/check-grammar?text=Wha+iz+da+color%3F in 2.4937 seconds
+2024-06-06 15:16:27,578 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x136d93010>
+2024-06-06 15:16:50,707 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+reading.+She+loves+watching+movie.
+2024-06-06 15:16:52,273 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+reading.+She+loves+watching+movie. in 1.5653 seconds
+2024-06-06 15:16:52,274 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x136dd0d60>
+2024-06-06 15:17:20,724 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/convert-to-professional?text=Hello+how+are+you%3F
+2024-06-06 15:17:22,714 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/convert-to-professional?text=Hello+how+are+you%3F in 1.9891 seconds
+2024-06-06 15:17:22,715 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x14244bbb0>
+2024-06-06 15:17:57,280 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/convert-to-casual?text=I+hope+you+are+doing+well+and+please+take+care.
+2024-06-06 15:17:59,092 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/convert-to-casual?text=I+hope+you+are+doing+well+and+please+take+care. in 1.8115 seconds
+2024-06-06 15:17:59,093 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x1423e6230>
+2024-06-06 15:18:29,175 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/elaborate-text?text=she+loves+reading+books+and+watching+movie.
+2024-06-06 15:18:36,873 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/elaborate-text?text=she+loves+reading+books+and+watching+movie. in 7.6980 seconds
+2024-06-06 15:18:36,875 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x1423e51e0>
+2024-06-06 15:19:11,945 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/keyword-extraction?text=Elon+musk+is+the+CEO+of+spaceX.
+2024-06-06 15:19:14,187 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/keyword-extraction?text=Elon+musk+is+the+CEO+of+spaceX. in 2.2406 seconds
+2024-06-06 15:19:14,188 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x142449150>
+2024-06-06 15:19:26,234 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/sentiment-analysis?text=I+love+watching+great+movies.
+2024-06-06 15:19:28,381 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/sentiment-analysis?text=I+love+watching+great+movies. in 2.1471 seconds
+2024-06-06 15:19:28,383 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x14244b460>
+2024-06-06 15:21:53,241 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/keyword-extraction?text=Naina+loves+reading+horro+books.
+2024-06-06 15:21:56,005 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/keyword-extraction?text=Naina+loves+reading+horro+books. in 2.7634 seconds
+2024-06-06 15:21:56,008 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bbfae90>
+2024-06-06 15:21:57,366 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/keyword-extraction?text=Naina+loves+reading+horro+books.
+2024-06-06 15:21:58,150 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/keyword-extraction?text=Naina+loves+reading+horro+books. in 0.7842 seconds
+2024-06-06 15:21:58,151 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bc38ee0>
+2024-06-06 15:22:07,132 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/sentiment-analysis?text=She+loves+reading.
+2024-06-06 15:22:08,392 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/sentiment-analysis?text=She+loves+reading. in 1.2604 seconds
+2024-06-06 15:22:08,393 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bd1a770>
+2024-06-06 15:22:53,460 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+reading.+she+loves+listening+music.
+2024-06-06 15:22:55,857 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/shorten-text?text=She+loves+reading.+she+loves+listening+music. in 2.3968 seconds
+2024-06-06 15:22:55,858 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bbfa0b0>
+2024-06-06 15:23:14,481 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/keyword-extraction?text=Elon+musk+is+the+ceo+of+spaceX.
+2024-06-06 15:23:16,546 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/keyword-extraction?text=Elon+musk+is+the+ceo+of+spaceX. in 2.0652 seconds
+2024-06-06 15:23:16,548 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bd193c0>
+2024-06-06 15:23:27,391 - logs.logging_config - INFO - Incoming request: GET http://0.0.0.0:8001/sentiment-analysis?text=She+loves+reading+books.
+2024-06-06 15:23:28,947 - logs.logging_config - INFO - Completed request: GET http://0.0.0.0:8001/sentiment-analysis?text=She+loves+reading+books. in 1.5561 seconds
+2024-06-06 15:23:28,948 - logs.logging_config - INFO - Added log entry: <database.sql_database.QueryLog object at 0x15bd198d0>

@@ -4,9 +4,7 @@ import requests
 import tempfile
 import streamlit as st
 
-
 BASE_URL = "http://0.0.0.0:8001"
-
 
 def shorten_text(text):
     api_url = f"{BASE_URL}/shorten-text"
@@ -15,6 +13,7 @@ def shorten_text(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # Raise an HTTPError for bad responses
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Shorten", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -28,6 +27,7 @@ def correct_grammar(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # Raise an HTTPError for bad responses
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Check Grammar", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -41,6 +41,7 @@ def make_professional(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # Raise an HTTPError for bad responses
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Professional", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -54,6 +55,7 @@ def make_casual(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # Raise an HTTPError for bad responses
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Casual", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -66,6 +68,7 @@ def elaborate_text(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()  # Raise an HTTPError for bad responses
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Elaborate", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -94,9 +97,7 @@ def enter_prompt_and_get_response(prompt):
         with st.spinner("Thinking..."):
             user_input = st.session_state.messages[-1]["content"]
             response = ask_llm(text=user_input)
-
             st.session_state.messages.append({"role": "assistant", "content": response})
-
         with st.chat_message("assistant"):
             st.markdown(response)
     except Exception as e:
@@ -111,6 +112,7 @@ def keyword_extraction(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Keyword Extraction", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -123,6 +125,7 @@ def sentiment_analysis(text):
         response = requests.get(api_url, params=params)
         response.raise_for_status()
         llm_response = response.json().get("response")
+        st.session_state.messages.append({"role": "system", "task": "Sentiment Analysis", "input": text, "output": llm_response})
         return llm_response
     except requests.RequestException as e:
         st.error(f"Error: {e}")
@@ -151,6 +154,9 @@ st.markdown("""
         <p>Perform various text processing tasks with our AI services.</p>
     </div>
 """, unsafe_allow_html=True)
+
+# st.subheader("Chat History")
+
 
 # User input
 # user_input = st.text_area("Enter your text here:")
