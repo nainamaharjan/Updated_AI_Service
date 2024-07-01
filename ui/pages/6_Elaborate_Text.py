@@ -2,6 +2,8 @@ import streamlit as st
 from ui.Homepage import elaborate_text
 
 st.title("Elaborate")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter Text:", key="elaborate_input")
 
 # Convert button

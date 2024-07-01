@@ -2,6 +2,8 @@ import streamlit as st
 from ui.Homepage import make_casual
 
 st.title("Make Text Casual")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter Text:", key="casual_input")
 
 # Convert button

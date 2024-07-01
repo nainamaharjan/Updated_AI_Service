@@ -2,6 +2,8 @@ import streamlit as st
 from ui.Homepage import shorten_text
 
 st.title("Shorten Text")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter Text:", key="shorten_input")
 
 # Convert button

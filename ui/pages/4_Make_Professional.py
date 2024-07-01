@@ -2,6 +2,8 @@ import streamlit as st
 from ui.Homepage import make_professional
 
 st.title("Make Text Professional")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter Text:", key="prof_input")
 
 # Convert button

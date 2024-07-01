@@ -2,6 +2,8 @@ import streamlit as st
 from ui.Homepage import sentiment_analysis
 
 st.title("Sentiment Analysis")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter text: ", key="sentiment-analysis")
 
 if st.button("Analyse"):

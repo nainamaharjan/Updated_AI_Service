@@ -3,6 +3,8 @@ from ui.Homepage import correct_grammar
 
 
 st.title("Correct Grammar")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 text_input = st.text_area("Enter Text:", key="tts_input")
 
 # Convert button

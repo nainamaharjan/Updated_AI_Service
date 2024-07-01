@@ -1,6 +1,6 @@
 transformers==4.41.0
 pydantic==2.5.0
-torch==2.0.1
+torch==2.2.0
 streamlit
 guidance==0.1.14
 sentencepiece==0.2.0
